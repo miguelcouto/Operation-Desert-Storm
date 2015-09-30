@@ -1,0 +1,716 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"a3_map_altis",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Structures_F_EPA_Civ_Camping",
+		"A3_Structures_F_Items_Electronics",
+		"A3_Structures_F_Items_Documents",
+		"A3_Modules_F",
+		"A3_Characters_F_Civil",
+		"A3_Structures_F_Heli_Furniture",
+		"A3_Structures_F_EPC_Items_Electronics",
+		"A3_Structures_F_Heli_Items_Electronics",
+		"A3_Structures_F_Bootcamp_Items_Electronics",
+		"A3_Structures_F_EPC_Civ_InfoBoards",
+		"A3_Structures_F_EPB_Furniture",
+		"A3_Structures_F_Furniture",
+		"A3_Structures_F_Civ_Camping",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Characters_F_OPFOR"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Modules_F",
+		"A3_Characters_F_Civil",
+		"A3_Characters_F_OPFOR",
+		"A3_Structures_F_EPA_Civ_Camping",
+		"A3_Structures_F_Items_Electronics",
+		"A3_Structures_F_Items_Documents",
+		"A3_Structures_F_Heli_Furniture",
+		"A3_Structures_F_EPC_Items_Electronics",
+		"A3_Structures_F_Heli_Items_Electronics",
+		"A3_Structures_F_Bootcamp_Items_Electronics",
+		"A3_Structures_F_EPC_Civ_InfoBoards",
+		"A3_Structures_F_EPB_Furniture",
+		"A3_Structures_F_Civ_Camping",
+		"A3_Structures_F_Furniture",
+		"A3_Weapons_F_Ammoboxes",
+		"a3_map_altis"
+	};
+	randomSeed=7381953;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=10;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14722.93,17.91,16748.609};
+					id=0;
+					side="WEST";
+					vehicle="B_soldier_M_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="MainPlayer";
+					init="null = [this] execVM ""Chars\MainCharacter.sqf"";";
+				};
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14772.59,17.91,16813.041};
+					azimut=90;
+					id=1;
+					side="LOGIC";
+					vehicle="LocationBase_F";
+					leader=1;
+					skill=0.60000002;
+					text="radio1";
+					init="nul = [this] execVM ""objects\RadioTower1.sqf"";";
+				};
+			};
+		};
+		class Item2
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14712.563,17.91,16745.117};
+					azimut=180;
+					id=2;
+					side="CIV";
+					vehicle="C_man_1";
+					leader=1;
+					skill=0.60000002;
+					text="scientist3";
+					init="removeallweapons this;  this unassignitem ""nvgoggles"";  this removeitem ""nvgoggles"";  removeHeadgear this;    removeGoggles this;  removeVest this;  removeBackpack this;  removeUniform this;  this addUniform ""U_C_Scientist"";   this disableAI ""move"";   player action [""Surrender"", this];";
+				};
+			};
+		};
+		class Item3
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14705.55,17.91,16742.516};
+					azimut=180;
+					id=3;
+					side="CIV";
+					vehicle="C_man_1";
+					leader=1;
+					skill=0.60000002;
+					text="scientist1";
+					init="removeallweapons this;  this unassignitem ""nvgoggles"";  this removeitem ""nvgoggles"";  removeHeadgear this;    removeGoggles this;  removeVest this;  removeBackpack this;  removeUniform this;  this addUniform ""U_C_Scientist"";   this disableAI ""move"";   player action [""Surrender"", this];";
+				};
+			};
+		};
+		class Item4
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14705.997,17.91,16740.797};
+					azimut=30;
+					id=4;
+					side="CIV";
+					vehicle="C_man_1";
+					leader=1;
+					skill=0.60000002;
+					text="scientist2";
+					init="removeallweapons this;  this unassignitem ""nvgoggles"";  this removeitem ""nvgoggles"";  removeHeadgear this;    removeGoggles this;  removeVest this;  removeBackpack this;  removeUniform this;  this addUniform ""U_C_Scientist"";   this disableAI ""move"";   player action [""Surrender"", this];";
+				};
+			};
+		};
+		class Item5
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14712.197,17.91,16741.404};
+					azimut=345;
+					id=5;
+					side="CIV";
+					vehicle="C_man_1";
+					leader=1;
+					skill=0.60000002;
+					text="scientist4";
+					init="removeallweapons this;  this unassignitem ""nvgoggles"";  this removeitem ""nvgoggles"";  removeHeadgear this;    removeGoggles this;  removeVest this;  removeBackpack this;  removeUniform this;  this addUniform ""U_C_Scientist"";   this disableAI ""move"";   player action [""Surrender"", this];";
+				};
+			};
+		};
+		class Item6
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14707.592,17.91,16743.775};
+					azimut=90;
+					id=6;
+					side="LOGIC";
+					vehicle="LocationBase_F";
+					leader=1;
+					skill=0.60000002;
+					text="labPos";
+					init="laboratorio = createVehicle [""Land_Medevac_HQ_V1_F"", getPos this, [], 0, ""CAN_COLLIDE""];";
+				};
+			};
+		};
+		class Item7
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14856.759,17.91,16743.09};
+					azimut=90;
+					id=7;
+					side="LOGIC";
+					vehicle="LocationBase_F";
+					leader=1;
+					skill=0.60000002;
+					text="radio2";
+					init="nul = [this] execVM ""objects\RadioTower2.sqf"";";
+				};
+			};
+		};
+		class Item8
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14722.988,17.91,16751.789};
+					azimut=180;
+					offsetY=0.80000001;
+					id=8;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					leader=1;
+					rank="COLONEL";
+					skill=0.60000002;
+					text="JalilAfifChar";
+					init="nul = [this] execVM ""Chars\JalilAfif.sqf"";";
+				};
+			};
+		};
+		class Item9
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15644.531,2.4501562,15864.952};
+					id=9;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=22;
+		class Item0
+		{
+			position[]={14722.605,17.91,16745.473};
+			azimut=90;
+			id=10;
+			side="EMPTY";
+			vehicle="Land_WoodenTable_large_F";
+			skill=0.60000002;
+			text="worktable";
+		};
+		class Item1
+		{
+			position[]={14724.436,17.91,16745.408};
+			azimut=90;
+			id=11;
+			side="EMPTY";
+			vehicle="Land_Laptop_unfolded_F";
+			skill=0.60000002;
+			text="nuclearDevice";
+			init="null = [this,worktable] execVM ""objects\NuclearDevice.sqf"";";
+		};
+		class Item2
+		{
+			position[]={14704.408,17.91,16744.859};
+			azimut=90;
+			id=12;
+			side="EMPTY";
+			vehicle="Land_File1_F";
+			skill=0.60000002;
+			text="nuclearPasswordDoc";
+			init="null = [this, documentTable] execVM ""objects\documentFiles.sqf"";";
+		};
+		class Item3
+		{
+			position[]={14702.973,17.91,16747.168};
+			offsetY=0.80000001;
+			id=13;
+			side="EMPTY";
+			vehicle="Land_OfficeCabinet_01_F";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={14704.496,17.91,16746.855};
+			azimut=310;
+			offsetY=0.80000001;
+			id=14;
+			side="EMPTY";
+			vehicle="Land_OfficeChair_01_F";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={14704.462,17.91,16745.775};
+			azimut=180;
+			offsetY=0.80000001;
+			id=15;
+			side="EMPTY";
+			vehicle="OfficeTable_01_new_F";
+			skill=0.60000002;
+			text="documentTable";
+		};
+		class Item6
+		{
+			position[]={14706.394,17.91,16746.855};
+			azimut=355;
+			offsetY=0.80000001;
+			id=16;
+			side="EMPTY";
+			vehicle="Land_OfficeChair_01_F";
+			skill=0.60000002;
+		};
+		class Item7
+		{
+			position[]={14706.359,17.91,16745.775};
+			azimut=180;
+			offsetY=0.80000001;
+			id=17;
+			side="EMPTY";
+			vehicle="OfficeTable_01_new_F";
+			skill=0.60000002;
+			text="foremanlap";
+		};
+		class Item8
+		{
+			position[]={14706.36,17.91,16744.725};
+			azimut=90;
+			id=18;
+			side="EMPTY";
+			vehicle="Land_Laptop_device_F";
+			skill=0.60000002;
+			text="laptopdelator";
+			init="null = [this,foremanlap] execVM ""objects\x9laptop.sqf"";";
+		};
+		class Item9
+		{
+			position[]={14707.886,17.91,16747.166};
+			offsetY=0.80000001;
+			id=19;
+			side="EMPTY";
+			vehicle="Land_OfficeCabinet_01_F";
+			skill=0.60000002;
+		};
+		class Item10
+		{
+			position[]={14703.21,17.91,16737.379};
+			azimut=180;
+			offsetY=0.80000001;
+			id=20;
+			side="EMPTY";
+			vehicle="Fridge_01_closed_F";
+			skill=0.60000002;
+		};
+		class Item11
+		{
+			position[]={14704.192,17.91,16737.381};
+			azimut=180;
+			offsetY=0.80000001;
+			id=21;
+			side="EMPTY";
+			vehicle="Land_WaterCooler_01_new_F";
+			skill=0.60000002;
+		};
+		class Item12
+		{
+			position[]={14705.954,17.91,16737.141};
+			azimut=180;
+			offsetY=0.80000001;
+			id=22;
+			side="EMPTY";
+			vehicle="MapBoard_seismic_F";
+			skill=0.60000002;
+		};
+		class Item13
+		{
+			position[]={14709.07,17.91,16746.857};
+			azimut=180;
+			offsetY=0.80000001;
+			id=23;
+			side="EMPTY";
+			vehicle="Land_ShelvesWooden_F";
+			skill=0.60000002;
+		};
+		class Item14
+		{
+			position[]={14709.106,17.91,16745.133};
+			azimut=90;
+			offsetY=0.80000001;
+			id=24;
+			side="EMPTY";
+			vehicle="Land_CampingTable_F";
+			skill=0.60000002;
+		};
+		class Item15
+		{
+			position[]={14710.088,17.91,16744.521};
+			azimut=180;
+			offsetY=0.80000001;
+			id=25;
+			side="EMPTY";
+			vehicle="Land_ChairPlastic_F";
+			skill=0.60000002;
+		};
+		class Item16
+		{
+			position[]={14710.088,17.91,16745.471};
+			azimut=180;
+			offsetY=0.80000001;
+			id=26;
+			side="EMPTY";
+			vehicle="Land_ChairPlastic_F";
+			skill=0.60000002;
+		};
+		class Item17
+		{
+			position[]={14722.968,17.91,16739.18};
+			azimut=90;
+			id=27;
+			side="EMPTY";
+			vehicle="Box_NATO_AmmoOrd_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item18
+		{
+			position[]={14724.322,17.91,16739.18};
+			azimut=90;
+			id=28;
+			side="EMPTY";
+			vehicle="Box_NATO_AmmoOrd_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item19
+		{
+			position[]={14725.677,17.91,16739.146};
+			azimut=90;
+			id=29;
+			side="EMPTY";
+			vehicle="Box_NATO_AmmoOrd_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item20
+		{
+			position[]={14711.34,17.91,16740.045};
+			azimut=235;
+			offsetY=0.80000001;
+			id=30;
+			side="EMPTY";
+			vehicle="Land_OfficeChair_01_F";
+			skill=0.60000002;
+		};
+		class Item21
+		{
+			position[]={14711.882,17.91,16746.615};
+			azimut=70;
+			offsetY=0.80000001;
+			id=31;
+			side="EMPTY";
+			vehicle="Land_OfficeChair_01_F";
+			skill=0.60000002;
+		};
+	};
+	class Markers
+	{
+		items=7;
+		class Item0
+		{
+			position[]={14690.65,17.91,16767.121};
+			name="laptopPosition1";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={14697.335,17.91,16767.223};
+			name="laptopPosition2";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={14705.118,17.91,16767.223};
+			name="laptopPosition3";
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={14712.3,17.91,16767.223};
+			name="laptopPosition4";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={14718.985,17.91,16766.924};
+			name="laptopPosition5";
+			type="Empty";
+		};
+		class Item5
+		{
+			position[]={14726.069,17.91,16766.525};
+			name="laptopPosition6";
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={14734.252,17.91,16766.525};
+			name="laptopPosition7";
+			type="Empty";
+		};
+	};
+	class Sensors
+	{
+		items=6;
+		class Item0
+		{
+			position[]={14702.807,17.91,16741.307};
+			a=0;
+			b=0;
+			activationType="NOT PRESENT";
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="(!alive scientist1) && (!alive scientist2) && (!alive scientist3) && (!alive scientist4)";
+			expActiv="nul = [this] execVM ""Triggers\scientistsKilled.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={14700.604,18.059839,16741.342};
+			a=0;
+			b=0;
+			activationType="NOT PRESENT";
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="(!alive laboratorio)";
+			expActiv="[[""No Traces"", ""Lab Destroyed"", ""The nuclear lab was destroyed, good work, no one will be able to continue the research now.""], ""new_fnc_MissionHint""] call BIS_fnc_MP;";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={14811.29,17.91,16774.619};
+			activationType="NOT PRESENT";
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="(radioDestroyed1) && (radioDestroyed2)";
+			expActiv="nul = [this] execVM ""Triggers\checkRadioTower.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item3
+		{
+			position[]={14726.075,17.91,16751.664};
+			a=0;
+			b=0;
+			activationType="NOT PRESENT";
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="!alive JalilAfifChar";
+			expActiv="nul = [this] execVM ""Triggers\JalilAfifDead.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item4
+		{
+			position[]={14715.132,17.91,16755.578};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="(nuclearDeviceDesarmed)";
+			class Effects
+			{
+				track="LeadTrack01_F_Bootcamp";
+			};
+		};
+		class Item5
+		{
+			position[]={14716.9,17.91,16725.348};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="scientistsdead && nuclearDeviceDesarmed && jalilafifdead";
+			expActiv="hint ""terminou"";";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=13009680;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=9216692;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=16080566;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

@@ -1,0 +1,25 @@
+author = "Krose";
+onLoadName = "[ELITE] Desert Storm";
+onLoadMission = "The Destiny of the wolrd is in your hands, the time is short, can you guarantee the tomorrow?";
+
+overviewText = "Complete Text";
+//overviewPicture = "Images\Snapshot.jpg";
+
+// MISSION HEADER
+class Header
+{
+	gameType 	= Coop;	// See options above
+	minPlayers 	= 2;	// Minimum players
+	maxPlayers 	= 2;	// Maximum players
+};
+
+
+onLoadMissionTime = 1;		//Define whether you will see the time and date displayed while the mission loads. 1 means visible, 0 hidden.
+respawn = 0;				//Define respawn configuration.
+aiKills 	= 1;			// Enable scorelist for AI players (1=yes/0=no)
+disabledAI 	= 0;			// Remove playable units not controlled by human players (1=yes/0=no)
+enableDebugConsole = 1;		//Habilita o debug console
+
+//Put these lines in your description.ext file
+#include "AF_Keypad\AF_KP_defines.hpp"
+#include "AF_Keypad\AF_KP_dialogs.hpp"
