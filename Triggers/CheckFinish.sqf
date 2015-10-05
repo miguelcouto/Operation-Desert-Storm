@@ -1,13 +1,25 @@
+/*
+ *  _  __                   
+ * | |/ /                   
+ * | ' / _ __ ___  ___  ___ 
+ * |  < | '__/ _ \/ __|/ _ \
+ * | . \| | | (_) \__ \  __/
+ * |_|\_\_|  \___/|___/\___|
+ *
+ * Arma 3 Mission
+ * Created by: Krose
+ * Mission: ELITE - Episode I - Operation Desert Storm
+ *
+*/
 
-hint format["%1 %2 %3",scientistsdead,nuclearDeviceDesarmed,jalilafifdead];
+//Marca a missão principal como terminada
+mainmissionfinished = true;
 
-if (scientistsdead && nuclearDeviceDesarmed && jalilafifdead) then 
-{
-	[["Main Mission", "Mission Completed", "Congratulations! You finished the mission, now, go back to your home."], "new_fnc_MissionHint"] call BIS_fnc_MP;
-	sleep 5;
-	["Victory",true,true] call BIS_fnc_endMission;
-}
-else
-{
-	//[["Not Completed", "You need to complete all your missions to extract!"], "new_fnc_hint"] call BIS_fnc_MP;
-}
+//Marca a extração
+markerStr = createMarker ["EZ", expoint];
+markerStr setMarkerText "Extraction Point";
+markerStr setMarkerShape "ICON";
+markerStr setMarkerType "hd_end";
+markerStr setMarkerColor "ColorOrange";
+
+[["Mission Completed. Go to extraction!"], "new_fnc_Overlord"] call BIS_fnc_MP;

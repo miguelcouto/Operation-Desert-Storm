@@ -1,7 +1,21 @@
-global_element = _this select 0;
+/*
+ *  _  __                   
+ * | |/ /                   
+ * | ' / _ __ ___  ___  ___ 
+ * |  < | '__/ _ \/ __|/ _ \
+ * | . \| | | (_) \__ \  __/
+ * |_|\_\_|  \___/|___/\___|
+ *
+ * Arma 3 Mission
+ * Created by: Krose
+ * Mission: ELITE - Episode I - Operation Desert Storm
+ *
+*/
+
+_radioMarkerPosition = _this select 0;
 
 //Cria o objeto da torre
-global_radio1 = createVehicle ["Land_TTowerBig_2_F", getPos global_element, [], 0, "CAN_COLLIDE"];
+global_radio1 = createVehicle ["Land_TTowerBig_2_F", getPos _radioMarkerPosition, [], 0, "CAN_COLLIDE"];
 
 //Cria o marcador da torre no mapa
 markerStr = createMarker ["RadioTower1", global_radio1];
@@ -11,12 +25,8 @@ markerStr setMarkerColor "ColorWhite";
 
 actionID = global_radio1 addAction["<t size='1' color='#E81C1C'>Arm Explosive</t>", {
 	
-	[["Main Mission", "Bomb Planted", "You have 2 minutes before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
-	sleep 60;
-	[["Main Mission", "Bomb Planted", "You have 1 minutes before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
-	sleep 30;
-	[["Main Mission", "Bomb Planted", "You have 30 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
-	sleep 20;
+	//[["Main Mission", "Bomb Planted", "You have 2 minutes before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	//sleep 110;
 	[["Main Mission", "Bomb Planted", "You have 10 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
 	[["Main Mission", "Bomb Planted", "You have 9 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
@@ -41,4 +51,8 @@ actionID = global_radio1 addAction["<t size='1' color='#E81C1C'>Arm Explosive</t
 	global_radio1 setdamage 1;
 	radioDestroyed1 = true;
 	
+	if (!radioDestroyed2) then 
+	{
+		[["Radio tower Destroyed! One more left!"], "new_fnc_Overlord"] call BIS_fnc_MP;
+	}
 }];

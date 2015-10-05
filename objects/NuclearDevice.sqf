@@ -1,3 +1,17 @@
+/*
+ *  _  __                   
+ * | |/ /                   
+ * | ' / _ __ ___  ___  ___ 
+ * |  < | '__/ _ \/ __|/ _ \
+ * | . \| | | (_) \__ \  __/
+ * |_|\_\_|  \___/|___/\___|
+ *
+ * Arma 3 Mission
+ * Created by: Krose
+ * Mission: ELITE - Episode I - Operation Desert Storm
+ *
+*/
+
 global_Laptop = _this select 0;
 global_tableToAttach = _this select 1;
 

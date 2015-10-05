@@ -1,6 +1,6 @@
-author = "Krose";
+author = "CCK";
 onLoadName = "[ELITE] Desert Storm";
-onLoadMission = "The Destiny of the wolrd is in your hands, the time is short, can you guarantee the tomorrow?";
+onLoadMission = "The Destiny of the world is in your hands, the time is short, can you guarantee the tomorrow?";
 
 overviewText = "Complete Text";
 //overviewPicture = "Images\Snapshot.jpg";
@@ -9,8 +9,8 @@ overviewText = "Complete Text";
 class Header
 {
 	gameType 	= Coop;	// See options above
-	minPlayers 	= 2;	// Minimum players
-	maxPlayers 	= 2;	// Maximum players
+	minPlayers 	= 5;	// Minimum players
+	maxPlayers 	= 5;	// Maximum players
 };
 
 

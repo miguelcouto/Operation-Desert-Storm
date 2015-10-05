@@ -1,3 +1,17 @@
+/*
+ *  _  __                   
+ * | |/ /                   
+ * | ' / _ __ ___  ___  ___ 
+ * |  < | '__/ _ \/ __|/ _ \
+ * | . \| | | (_) \__ \  __/
+ * |_|\_\_|  \___/|___/\___|
+ *
+ * Arma 3 Mission
+ * Created by: Krose
+ * Mission: ELITE - Episode I - Operation Desert Storm
+ *
+*/
+
 global_x9Laptop = _this select 0;
 global_x9tableToAttach = _this select 1;
 
@@ -9,11 +23,16 @@ global_x9Laptop setDir 180;
 actionID = global_x9Laptop addAction["<t size='1' color='#E81C1C'>INTEL</t>", 
 { 
 	global_x9Laptop removeAction actionID;
-	[["Main Mission", "New Intel", "This laptop contains informations about the nuclear device location. Your map was updated."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	//[["Main Mission", "New Intel", "This laptop contains informations about the nuclear device location."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	
 	markerStr = createMarker ["NuclearDevice", worktable];
 	markerStr setMarkerText "Nuclear Device";
 	markerStr setMarkerShape "ICON";
 	markerStr setMarkerType "hd_flag";
 	markerStr setMarkerColor "ColorOrange";
+	
+	nuclearDeviceFound = true;
+	
+	sleep 10;
+	[["You have a new marker in your map showing the position of the nuclear device. Good Luck."], "new_fnc_Overlord"] call BIS_fnc_MP;
 }];
