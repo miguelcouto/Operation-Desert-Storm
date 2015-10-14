@@ -20,16 +20,13 @@ enableRadio true;							//Ativa o rádio interno do jogo
 tf_no_auto_long_range_radio = true;			//Remove a mochila do TaskForce Radio, já que o jogo será single player não há necessidade de mostrá-la
 
 //Carrega tudo
-[] execVM "Tasks.sqf";						//Todas as taredas de todos os jogadores
+//[] execVM "Tasks.sqf";						
+[[[],"Tasks.sqf"],"BIS_fnc_execVM",false,true] call BIS_fnc_MP;		//Todas as taredas de todos os jogadores
 [] execVM "Briefing.sqf";					//Briefing completo da missão
 [] execVM "functions.sqf";					//Todas as funções
-[] execVM "AF_Keypad\AF_KP_vars.sqf";		//Necessário para fazer a tela de inserção de senha
 
 //-----------------------------------------------------------------------
 //Global Variables
-
-//Gera uma senha de 5 digitos que será utilizada para desarmar a bomba
-nuclearTruePass = format["%1%2%3%4%5",round(random 9),round(random 9),round(random 9),round(random 9),round(random 9)];
 
 //enableDebugConsole = 1;
 scientistsdead = false;						//Verifica se todos os cientistas estão mortos

@@ -19,7 +19,7 @@
 scientistsdead = true;
 
 //Mostra a mensagem
-[["Ok, the scientists team are dead, maybe in this lab you can find some kind of intel, anything that can be useful to find or disarm the nuclear device."], "new_fnc_Overlord"] call BIS_fnc_MP;
+[["Ok, a equipe de cientistas foi eliminada, talvez neste laboratório você possa encontrar algum tipo de intel, qualquer coisa que pode ser útil para desarmar o dispositivo nuclear"], "new_fnc_Overlord"] call BIS_fnc_MP;
 
 //Informa que o jogo foi salvo
 if (missionautosave) then {

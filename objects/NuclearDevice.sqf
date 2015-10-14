@@ -25,11 +25,21 @@ possibleLaptopPosition = ["laptopPosition1","laptopPosition2","laptopPosition3",
 lapTopRandomPosition = possibleLaptopPosition select (floor random 7);
 global_tableToAttach setPos getmarkerpos lapTopRandomPosition;
 
-actionID = global_Laptop addAction["<t size='1' color='#E81C1C'>Disarm Nuclear Device</t>", 
+actionID = global_Laptop addAction["<t size='1' color='#E81C1C'>DESARMAR DISPOSITIVO</t>", 
 { 
 	//Remove a ação do dispositivo
 	global_Laptop removeAction actionID;
 	
-	//Cria o keypad para o dispositivo
-	createDialog "AF_Keypad";
+	//Task Complete
+	["task02","Succeeded"] call BIS_fnc_taskSetState;
+
+	//Informa que o dispositivo nuclear foi desarmado
+	nuclearDeviceDesarmed = true;
+
+	[["Missão Principal", "Dispositivo Desarmado", "O dispositivo nuclear foi desarmado"], "new_fnc_MissionHint"] call BIS_fnc_MP;
+
+	//Informa que o jogo foi salvo
+	if (missionautosave) then {
+		saveGame;
+	}
 }];

@@ -16,6 +16,6 @@
 ["task03","Succeeded"] call BIS_fnc_taskSetState;
 
 //Informa o que aconteceu
-[["Main Mission", "Enemy Communications Blocked", "Enemy communications are now blocked, the two radio towers are destroyed."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+[["Missão Principal", "Comunicações Perdidas", "Enemy communications are now blocked, the two radio towers are destroyed."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 sleep 10;
 [["Be advised, our sattellite images are showing that the enemy are all crazy, they know that something happened with the radio towers and they will converge now to towers position."], "new_fnc_Overlord"] call BIS_fnc_MP;

@@ -16,7 +16,7 @@ new_fnc_hint =
 {
 	hintTitle = (_this select 0);
 	hintText = (_this select 1);
-	
+
 	strTxtFormated = format["<t size='2.5' color='#28B559'>%1</t><br/><t color='#ffff00'>......................................</t><br/><br/>%2<br/><br/>", hintTitle, hintText];
 	strTxt = parseText(strTxtFormated);
 	hint strTxt;
@@ -61,11 +61,11 @@ new_fnc_Overlord =
 	
 	player createDiaryRecord ["Elite Log",[_logTimeText, "
 	<br/>
-	<font color='#9EE872'>FROM:</font> OVERLORD<br/>
-	<font color='#9EE872'>TO:</font> DELTA-ONE<br/>
-	<font color='#9EE872'>TIME:</font> " + _logTime + "<br/>
+	<font color='#9EE872'>DE:</font> OVERLORD (DEVGRU)<br/>
+	<font color='#9EE872'>PARA:</font> DELTA-ONE<br/>
+	<font color='#9EE872'>HORA:</font> " + _logTime + "<br/>
 	<font color='#6c7169'>------------------------------------------------------------------------------------------</font><br/>
-	<font color='#FFFFFF'>MESSAGE REGISTERED:</font> " + hintText + " <br/>
+	<font color='#FFFFFF'>MENSAGEM REGISTRADA:</font> " + hintText + " <br/>
 	<font color='#6c7169'>------------------------------------------------------------------------------------------</font><br/>"]];
 };
 
@@ -96,11 +96,12 @@ new_fnc_fadeEffect =
 
 new_fnc_MPInitialInfo = 
 {	
-	["E.L.I.T.E", "Episode 1"] call BIS_fnc_infoText;
+	["E.L.I.T.E", "Episódio 1"] call BIS_fnc_infoText;
 	sleep 5;
-	["Operation", "Desert Storm"] call BIS_fnc_infoText;
+	["Operação", "Desert Storm"] call BIS_fnc_infoText;
 	sleep 10;
-	[["DELTA-ONE, welcome to the field, only you can do this job. Reach the supply location, and be ready for everything."], "new_fnc_Overlord"] call BIS_fnc_MP;
+
+	[["Bem vindo ao campo, apenas sua equipe pode fazer este trabalho. Faça seu caminho até a localização dos suprimentos e esteja preparado para tudo."], "new_fnc_Overlord"] call BIS_fnc_MP;
 	sleep 10;
-	[["Remember, you are alone in the field, no help, no support, no squad... Be careful"], "new_fnc_Overlord"] call BIS_fnc_MP;
+	[["Lembre-se, seu esquadrão está sozinho, sem ajuda e sem suporte... Cuidado."], "new_fnc_Overlord"] call BIS_fnc_MP;
 };

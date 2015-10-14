@@ -23,29 +23,31 @@ markerStr setMarkerShape "ICON";
 markerStr setMarkerType "loc_Transmitter";
 markerStr setMarkerColor "ColorWhite";
 
-actionID = global_radio1 addAction["<t size='1' color='#E81C1C'>Arm Explosive</t>", {
+actionID = global_radio1 addAction["<t size='1' color='#E81C1C'>Armar explosivo</t>", {
 	
-	//[["Main Mission", "Bomb Planted", "You have 2 minutes before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
-	//sleep 110;
-	[["Main Mission", "Bomb Planted", "You have 10 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 2 mikes antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	sleep 60;
+	[["Missão Principal", "Bomba Plantada", "Você tem 1 mikes antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	sleep 50;
+	[["Missão Principal", "Bomba Plantada", "Você tem 10 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 9 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 9 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 8 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 8 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 7 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 7 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 6 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 6 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 5 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 5 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 4 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 4 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 3 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 3 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 2 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 2 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
-	[["Main Mission", "Bomb Planted", "You have 1 seconds before the radio tower explodes."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+	[["Missão Principal", "Bomba Plantada", "Você tem 1 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 	sleep 1;
 	
 	global_radio1 setdamage 1;
@@ -53,6 +55,6 @@ actionID = global_radio1 addAction["<t size='1' color='#E81C1C'>Arm Explosive</t
 	
 	if (!radioDestroyed2) then 
 	{
-		[["Radio tower Destroyed! One more left!"], "new_fnc_Overlord"] call BIS_fnc_MP;
+		[["Torre de rádio foi destruída. Resta mais uma."], "new_fnc_Overlord"] call BIS_fnc_MP;
 	}
 }];

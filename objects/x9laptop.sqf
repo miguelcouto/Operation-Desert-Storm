@@ -34,5 +34,5 @@ actionID = global_x9Laptop addAction["<t size='1' color='#E81C1C'>INTEL</t>",
 	nuclearDeviceFound = true;
 	
 	sleep 10;
-	[["You have a new marker in your map showing the position of the nuclear device. Good Luck."], "new_fnc_Overlord"] call BIS_fnc_MP;
+	[["Este laptop continha informações sobre a localização do dispositivo nuclear dentro da cidade de Kavala. Uma nova marcação foi feita no seu mapa."], "new_fnc_Overlord"] call BIS_fnc_MP;
 }];

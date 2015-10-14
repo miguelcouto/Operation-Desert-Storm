@@ -44,7 +44,7 @@ nul = global_jalif spawn {
 };
 
 
-actionID = global_jalif addAction["<t size='1' color='#E81C1C'>Search Intel</t>", {
+actionID = global_jalif addAction["<t size='1' color='#E81C1C'>Procurar Intel</t>", {
 	
 	//Remove a ação do personagem
 	global_jalif removeAction actionID;
@@ -53,8 +53,8 @@ actionID = global_jalif addAction["<t size='1' color='#E81C1C'>Search Intel</t>"
 	if (!nuclearDeviceDesarmed) then 
 	{
 		if (!nuclearDeviceFound) then 
-		{
-			[["Main Mission", "New Intel", "You found informations about the nuclear device location in Jalil Afif body. Your map was updated."], "new_fnc_MissionHint"] call BIS_fnc_MP;
+		{	
+			[["O corpo de Jalil Afif continha informações sobre a localização do dispositivo nuclear dentro da cidade de Kavala. Uma nova marcação foi feita no seu mapa."], "new_fnc_Overlord"] call BIS_fnc_MP;
 			
 			markerStr = createMarker ["NuclearDevice", worktable];
 			markerStr setMarkerText "Nuclear Device";
@@ -64,12 +64,12 @@ actionID = global_jalif addAction["<t size='1' color='#E81C1C'>Search Intel</t>"
 		}
 		else
 		{
-			[["You already have the location of the nuclear device."], "new_fnc_Overlord"] call BIS_fnc_MP;
+			[["Você já tem a localização do dispositivo nuclear."], "new_fnc_Overlord"] call BIS_fnc_MP;
 		}
 	}
 	else
 	{
-		[["No Intel", "No Intel Avaible."], "new_fnc_hint"] call BIS_fnc_MP;
+		[["Sem Intel", "Não há intel disponível no corpo de Jalil Afif."], "new_fnc_hint"] call BIS_fnc_MP;
 	}
 
 }];
