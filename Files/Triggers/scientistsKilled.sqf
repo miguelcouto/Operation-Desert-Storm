@@ -17,6 +17,7 @@
 
 //Seta os cientistas como mortos
 scientistsdead = true;
+publicVariable "scientistsdead";
 
 //Mostra a mensagem
 [["Ok, a equipe de cientistas foi eliminada, talvez neste laboratório você possa encontrar algum tipo de intel, qualquer coisa que pode ser útil para desarmar o dispositivo nuclear"], "new_fnc_Overlord"] call BIS_fnc_MP;

@@ -14,6 +14,7 @@
 
 //Marca a missão principal como terminada
 mainmissionfinished = true;
+publicVariable "mainmissionfinished";
 
 //Marca a extração
 markerStr = createMarker ["EZ", expoint];
@@ -22,4 +23,4 @@ markerStr setMarkerShape "ICON";
 markerStr setMarkerType "hd_end";
 markerStr setMarkerColor "ColorOrange";
 
-[["Mission Completed. Go to extraction!"], "new_fnc_Overlord"] call BIS_fnc_MP;
+[["Missão Completa! Siga para a extração"], "new_fnc_Overlord"] call BIS_fnc_MP;

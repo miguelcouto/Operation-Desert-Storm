@@ -16,10 +16,11 @@
 ["task04","Succeeded"] call BIS_fnc_taskSetState;
 
 //Exibe a mensagem de vitória
-[["Very good! Jalil Afif is finally dead and all your plans with him. Search your body for some intel."], "new_fnc_Overlord"] call BIS_fnc_MP;
+[["A morte de Jalil Afif foi confirmada! Ótimo trabalho."], "new_fnc_Overlord"] call BIS_fnc_MP;
 
 //Seta a principal variavel para true.
 jalilafifdead = true;
+publicVariable "jalilafifdead";
 
 if (missionautosave) then {
 	saveGame;

@@ -1,22 +1,42 @@
+
+/**********  Configurações da missão **********/
+class Header
+{
+	gameType 	= Coop;	// See options above
+	minPlayers 	= 1;	// Minimum players
+	maxPlayers 	= 5;	// Maximum players
+};
+
+/**********  Tela de carregamento **********/
 author = "CCK";
 onLoadName = "[ELITE] Desert Storm";
 onLoadMission = "O Destino do mundo está em suas mãos, você pode garantir o amanha?";
 loadScreen 		= "Images\Overlay.jpg";
-
+onLoadIntroTime = false;
+onLoadMissionTime = false;
 overviewText = "Jalil Afif é mais um lunático terrorista que possui em suas mãos uma poderosa arma de destruição em massa. Seus cientistas criaram um avançado dispositivo que pode ativar centenas de ogivas a distância em alvos pré-programados lançando assim um bombardeio em massa. Este dispositivo pode mudar a face do mundo se for utilizado, e só a sua equipe pode fazer isso. Sua missão é se infiltrar na cidade de Kavala, eliminar os cientistas e por um fim na ameaça de Jalil Afif encerrando com a sua vida.";
 overviewPicture = "Images\Snapshot.jpg";
 
-// MISSION HEADER
-class Header
-{
-	gameType 	= Coop;	// See options above
-	minPlayers 	= 5;	// Minimum players
-	maxPlayers 	= 5;	// Maximum players
-};
-
-
-onLoadMissionTime = 1;		//Define whether you will see the time and date displayed while the mission loads. 1 means visible, 0 hidden.
-respawn = 0;				//Define respawn configuration.
+/********** Especificações da missão **********/
+respawn = 1;				//Define respawn configuration.
 aiKills 	= 1;			//Enable scorelist for AI players (1=yes/0=no)
 disabledAI 	= 0;			//Remove playable units not controlled by human players (1=yes/0=no)
 saving = 0;					//Toggle saving. 
+respawnDelay = 30;			//Respawn delay time in seconds (set to 3 for testing, set to 300 (= 5 min) for final)
+RespawnDialog = 0; 			// Respawn dialog in case of multiple locations. 0 = false (no dialog), 1 = true (show dialog).
+respawnOnStart = -1; 		// 1 = Respawn on start. Run respawn script on start, 0 = Dont respawn on start. Run respawn script on start, -1 = Dont respawn on start. Don't run respawn script on start.
+//respawnTemplatesWest[] = {"Seagull", "f_spectator"};
+//respawnTemplatesEast[] = {"Counter", "Tickets"};
+//respawnTemplatesCiv[] = {"Counter"};
+
+/********** Configurações da missão **********/
+showGPS = 1; // Allow GPS where (0=disallowed), (1=allowed)
+showCompass = 1; // Allow Compass (0=disallowed), (1=allowed)
+showWatch = 1; // Allow Watch (0=disallowed), (1=allowed)
+showMap = 1;  // Allow Map (0=disallowed), (1=allowed)
+forceRotorLibSimulation = 1; // (0=options based), (1=force enable), (2=force disable)
+//disableChannels[]={1,2,3,4}; // Restrict chat channels where (0=Global),(1=Side),(2=Command),(3=Group),(4=Vehicle),(5=Direct),(6=System)
+
+/********** Favor não editar daqui para baixo **********/
+
+#include "missionConfig.hpp"
