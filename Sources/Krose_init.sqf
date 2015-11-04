@@ -37,6 +37,9 @@ krose_toggleBulletCamAbort		= false;			//Controle utilizado pelo bullet camera p
 krose_CivMurderer				= nil;				//Registra o nome do jogador que matou o ultimo civil
 krose_lastCivilCreated			= nil;				//Registra a posição do ultimo civil criado no spawn
 
+//Informa se este framework ou missão está rodando em modo alpha, irá sempre aparecer uma mensagem
+krose_devBuild					= "Release";
+
 //Configura algumas informações finais do jogo
 player setVariable ["BIS_noCoreConversations",true]; //Desabilita o chatter AI
 enableSentences false; //Reinforça desabilitar o chatter AI

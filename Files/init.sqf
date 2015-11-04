@@ -46,3 +46,9 @@ jalilafifdead = false;						//Informa se Jalil está mesmo morto
 missionautosave = false;					//Informa se a missão possui pontos de auto-save
 mainmissionfinished = false;				//Informa se a missão principal já foi concluida
 nuclearDeviceFound = false;					//Informa se o dispositivo nuclear já foi encontrado
+
+if (isServer) then {
+	[["Bem vindo ao campo, apenas sua equipe pode fazer este trabalho. Faça seu caminho até a localização dos suprimentos e esteja preparado para tudo."], "new_fnc_Overlord"] call BIS_fnc_MP;
+	sleep 10;
+	[["Lembre-se, seu esquadrão está sozinho, sem ajuda e sem suporte... Cuidado."], "new_fnc_Overlord"] call BIS_fnc_MP;
+}

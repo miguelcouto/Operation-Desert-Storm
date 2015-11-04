@@ -28,6 +28,7 @@ new_fnc_Overlord =
 	
 	_strTxt = parseText(_strTxtFormated);
 	
+	/*
 	if (krose_haveHighCommand) then
 	{
 		if (krose_highCommandSideChat) then
@@ -38,6 +39,7 @@ new_fnc_Overlord =
 			};
 		};
 	};
+	*/
 
 	//Mostra o Hint na tela do jogador
 	hintSilent _strTxt;

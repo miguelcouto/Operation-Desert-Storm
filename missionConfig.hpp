@@ -15,10 +15,9 @@
 
 //Insignias das unidades
  class CfgUnitInsignia {
- 	
  	//Insignia principal dos jogadores, não alterar o nome da classe
  	class KROSECLAN {
- 		displayName = "ELITE";					//Nome que será mostrado no arsenal
+ 		displayName = "KROSE";					//Nome que será mostrado no arsenal
  		author = "Krose"						//Author da insignia
  		texture = "Images\eliteinsig256.paa";	//Textura da insignia, recomendado que seja 128X128 arquivo PAA.
  		textureVehicle = ""; 					//Esta opção atualmente não faz nada, a Bohemia Interactive a está reservando para uso futuro

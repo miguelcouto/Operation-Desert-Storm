@@ -12,21 +12,14 @@
  *
 */
 
-//Apenas o servidor vai poder criar a torre de rádio
-if (isServer) then {
-	_radioMarkerPosition = _this select 0;
+hook_all_action = {
+	_object = (_this select 0);
 
-	//Cria o objeto da torre
-	global_radio1 = createVehicle ["Land_TTowerBig_2_F", getPos _radioMarkerPosition, [], 0, "CAN_COLLIDE"];
+	actionID = _object addAction["<t size='1' color='#E81C1C'>Armar explosivo</t>", 
+	{	
 
-	//Cria o marcador da torre no mapa
-	markerStr = createMarker ["RadioTower1", global_radio1];
-	markerStr setMarkerShape "ICON";
-	markerStr setMarkerType "loc_Transmitter";
-	markerStr setMarkerColor "ColorWhite";
+		_thisTower = (_this select 0);
 
-	actionID = global_radio1 addAction["<t size='1' color='#E81C1C'>Armar explosivo</t>", {
-		
 		[["Missão Principal", "Bomba Plantada", "Você tem 2 mikes antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 		sleep 60;
 		[["Missão Principal", "Bomba Plantada", "Você tem 1 mikes antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
@@ -52,9 +45,8 @@ if (isServer) then {
 		[["Missão Principal", "Bomba Plantada", "Você tem 1 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 		sleep 1;
 		
-		global_radio1 setdamage 1;
+		_thisTower setdamage 1;
 		radioDestroyed1 = true;
-		
 		//Transmite a variavel
 		publicVariable "radioDestroyed1";
 
@@ -63,4 +55,25 @@ if (isServer) then {
 			[["Torre de rádio foi destruída. Resta mais uma."], "new_fnc_Overlord"] call BIS_fnc_MP;
 		}
 	}];
+
 };
+
+//Apenas o servidor vai poder criar a torre de rádio
+if (isServer) then 
+{
+	_radioMarkerPosition = _this select 0;
+
+	//Cria o objeto da torre
+	global_radio1 = createVehicle ["Land_TTowerBig_2_F", getPos _radioMarkerPosition, [], 0, "CAN_COLLIDE"];
+	publicVariable "global_radio1";
+
+	//Cria o marcador da torre no mapa
+	markerStr = createMarker ["RadioTower1", global_radio1];
+	markerStr setMarkerShape "ICON";
+	markerStr setMarkerType "loc_Transmitter";
+	markerStr setMarkerColor "ColorWhite";
+
+	[[global_radio1],"hook_all_action"] call BIS_fnc_MP;
+
+};
+

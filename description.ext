@@ -4,13 +4,13 @@ class Header
 {
 	gameType 	= Coop;	// See options above
 	minPlayers 	= 1;	// Minimum players
-	maxPlayers 	= 5;	// Maximum players
+	maxPlayers 	= 9;	// Maximum players
 };
 
 /**********  Tela de carregamento **********/
-author = "CCK";
+author = "CCP";
 onLoadName = "[ELITE] Desert Storm";
-onLoadMission = "O Destino do mundo está em suas mãos, você pode garantir o amanha?";
+onLoadMission = "Operação Desert Storm";
 loadScreen 		= "Images\Overlay.jpg";
 onLoadIntroTime = false;
 onLoadMissionTime = false;
@@ -18,16 +18,10 @@ overviewText = "Jalil Afif é mais um lunático terrorista que possui em suas m�
 overviewPicture = "Images\Snapshot.jpg";
 
 /********** Especificações da missão **********/
-respawn = 1;				//Define respawn configuration.
 aiKills 	= 1;			//Enable scorelist for AI players (1=yes/0=no)
 disabledAI 	= 0;			//Remove playable units not controlled by human players (1=yes/0=no)
 saving = 0;					//Toggle saving. 
-respawnDelay = 30;			//Respawn delay time in seconds (set to 3 for testing, set to 300 (= 5 min) for final)
-RespawnDialog = 0; 			// Respawn dialog in case of multiple locations. 0 = false (no dialog), 1 = true (show dialog).
-respawnOnStart = -1; 		// 1 = Respawn on start. Run respawn script on start, 0 = Dont respawn on start. Run respawn script on start, -1 = Dont respawn on start. Don't run respawn script on start.
-//respawnTemplatesWest[] = {"Seagull", "f_spectator"};
-//respawnTemplatesEast[] = {"Counter", "Tickets"};
-//respawnTemplatesCiv[] = {"Counter"};
+respawnDelay = 9999999;			//Respawn delay time in seconds (set to 3 for testing, set to 300 (= 5 min) for final)
 
 /********** Configurações da missão **********/
 showGPS = 1; // Allow GPS where (0=disallowed), (1=allowed)
@@ -40,3 +34,5 @@ forceRotorLibSimulation = 1; // (0=options based), (1=force enable), (2=force di
 /********** Favor não editar daqui para baixo **********/
 
 #include "missionConfig.hpp"
+//Changes respawn, respawnDialog and respawnTemplates parameters.
+#include "CSSA3\CSSA3_header.hpp"

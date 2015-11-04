@@ -26,7 +26,7 @@ if (isServer && !isDedicated) then
 	waitUntil { player == player && alive vehicle player };
 
 	//Cor das opções
-	_colorOptions = "14D1DB";
+	_colorOptions = "F2592E";
 
 	//Opções a serem adicionadas
 	player addAction ["<t align='left' color='#" + _colorOptions + "'>Alternar Modo Invisivel.</t>",{ execVM "Sources\dbg\Krose_fnc_phantom.sqf"; }];
@@ -42,15 +42,8 @@ if (isServer && !isDedicated) then
 	player addAction ["<t align='left' color='#" + _colorOptions + "'>Acessar Arsenal Virtual</t>",{ ["Open", true] call BIS_fnc_arsenal; }];
 	player addAction ["<t align='left' color='#" + _colorOptions + "'>Alternar Bullet Tracer</t>",{ execVM "Sources\dbg\Krose_fnc_toggleBulletTracer.sqf"; }];
 	player addAction ["<t align='left' color='#" + _colorOptions + "'>Alternar Bullet Camera</t>",{ execVM "Sources\dbg\Krose_fnc_toggleBulletCam.sqf"; }];
-	player addAction ["<t align='left' color='#" + _colorOptions + "'>Ir para ultimo civil spawnado.</t>",{ 
-		if (isNil krose_lastCivilCreated) then {
-			["Civilian Spawn", "Ainda não foi spawnado nenhum civil ou veículo civil"] call krose_fnc_hint; 
-		}
-		else
-		{
-			player setPosASL krose_lastCivilCreated;
-		};
-	}];
+	player addAction ["<t align='left' color='#" + _colorOptions + "'>Forçar modo espectador</t>",{ ["forced"] spawn CSSA3_fnc_createSpectateDialog; }];
+	player addAction ["<t align='left' color='#" + _colorOptions + "'>Ir para ultimo civil spawnado.</t>",{ if (isNil krose_lastCivilCreated) then { ["Civilian Spawn", "Ainda não foi spawnado nenhum civil ou veículo civil"] call krose_fnc_hint; } else { player setPosASL krose_lastCivilCreated; }; }];
 
 	player addEventHandler ["fired", { _this execVM "Sources\dbg\Krose_fnc_bullettracer.sqf"; }];
 	player addEventHandler ["fired", { _this execVM "Sources\dbg\Krose_fnc_bulletCam.sqf"; }];

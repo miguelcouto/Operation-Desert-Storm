@@ -12,20 +12,13 @@
  *
 */
 
-//Apenas o servidor vai poder criar a torre de rádio
-if (isServer) then {
-	_radioMarkerPosition = _this select 0;
+hook_all_action2 = {
+	_object = (_this select 0);
 
-	//Cria o objeto da torre
-	global_radio2 = createVehicle ["Land_TTowerBig_2_F", getPos _radioMarkerPosition, [], 0, "CAN_COLLIDE"];
-
-	//Cria o marcador da torre no mapa
-	markerStr = createMarker ["RadioTower2", global_radio2];
-	markerStr setMarkerShape "ICON";
-	markerStr setMarkerType "loc_Transmitter";
-	markerStr setMarkerColor "ColorWhite";
-
-	actionID = global_radio2 addAction["<t size='1' color='#E81C1C'>Armar Explosivo</t>", {
+	actionID = _object addAction["<t size='1' color='#E81C1C'>Armar explosivo</t>", 
+	{	
+		
+		_thisTower = (_this select 0);
 		
 		[["Missão Principal", "Bomba Plantada", "Você tem 2 mikes antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 		sleep 60;
@@ -52,7 +45,7 @@ if (isServer) then {
 		[["Missão Principal", "Bomba Plantada", "Você tem 1 segundos antes que a torre de rádio exploda."], "new_fnc_MissionHint"] call BIS_fnc_MP;
 		sleep 1;
 		
-		global_radio2 setdamage 1;
+		_thisTower setdamage 1;
 		radioDestroyed2 = true;
 		
 		//Transmite a variavel
@@ -62,6 +55,23 @@ if (isServer) then {
 		{
 			[["Torre de rádio foi destruída. Resta mais uma."], "new_fnc_Overlord"] call BIS_fnc_MP;
 		}
-		
 	}];
+};
+
+//Apenas o servidor vai poder criar a torre de rádio
+if (isServer) then
+{
+	_radioMarkerPosition = _this select 0;
+
+	//Cria o objeto da torre
+	global_radio2 = createVehicle ["Land_TTowerBig_2_F", getPos _radioMarkerPosition, [], 0, "CAN_COLLIDE"];
+	publicVariable "global_radio2";
+
+	//Cria o marcador da torre no mapa
+	markerStr = createMarker ["RadioTower2", global_radio2];
+	markerStr setMarkerShape "ICON";
+	markerStr setMarkerType "loc_Transmitter";
+	markerStr setMarkerColor "ColorWhite";
+
+	[[global_radio2],"hook_all_action2"] call BIS_fnc_MP;
 };

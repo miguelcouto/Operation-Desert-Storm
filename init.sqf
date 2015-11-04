@@ -55,6 +55,25 @@ else
 //Adiciona as funções básicas
 execVM "Sources\Krose_fnc_GenFunction.sqf";
 
+//Inicializa o modo espectador caso tenha
+if (krose_spectatorMode) then 
+{
+	[] execVM "CSSA3\CSSA3_init.sqf";
+
+	//Only players can be spectated. True/False
+	CSSA3_onlySpectatePlayers = krose_onlyplayers;
+	//Perspective modes that can be used.
+	CSSA3_allowedModes = ["freeCam","firstPerson","thirdPerson"];
+	//Sides that BLUFOR players can spectate.
+	CSSA3_bluforSpectateable = [blufor, opfor, civilian, resistance];
+	//Sides that OPFOR players can spectate.
+	CSSA3_opforSpectateable = [blufor, opfor, civilian, resistance];
+	//Sides that CIVILIAN players can spectate.
+	CSSA3_civilianSpectateable = [blufor, opfor, civilian, resistance];
+	//Sides that INDEPENDENT players can spectate.
+	CSSA3_independentSpectateable = [blufor, opfor, civilian, resistance];
+};
+
 //A Randomização do vento apenas irá ocorrer no servidor, para então, propagar aos clientes
 if (isServer) then 
 {
@@ -76,8 +95,6 @@ if (isServer) then
 
 	//Configurações do alto Comando
 	execVM "Sources\Krose_fnc_highCommand.sqf";
-	//Configurações dos jogadores
-	execVM "Sources\Krose_fnc_playerSpawn.sqf";
 	//Configurações sobre morte de civis em campo de batalha
 	if (krose_checkForCIVKIA) then { execVM "Sources\Krose_fnc_civKilled.sqf"; };
 
@@ -142,13 +159,14 @@ if (!isDedicated && !krose_enableDebug) then
 				sleep _credTimer;
 				[[_title, _msg], "BIS_fnc_infoText"] call BIS_fnc_MP;
 			} forEach _addCredits;
-
 		};
 	}
 }
 
+//Configurações dos jogadores
+execVM "Sources\Krose_fnc_playerSpawn.sqf";
 //Aqui agora roda o script que deve ser editado pelo criador
 execVM "Files\init.sqf";
 
 //Aqui o sistema realiza o Post Processing 
-execVM "Krose_fnc_postProcess.sqf";
+[krose_startMissionAfter] execVM "Sources\Krose_fnc_postProcess.sqf";

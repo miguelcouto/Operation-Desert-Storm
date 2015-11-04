@@ -24,7 +24,7 @@ krose_CanManualSaving 			= false;
 //Indica se a missão está com o Task Force Arrowread Radio ativado
 krose_usingTFAR 				= true;
 //Habilita ou Previne o respawn do rádio de longa distância (os que aparecem nas costas dos jogadores no respawn)
-krose_noTFARLong 				= true;
+krose_noTFARLong 				= false;
 //Remover rádio de todos os jogadores
 krose_noTFARPersonalRadio		= false;
 //Caso jogador possa utilizar rádios de longa distância, o padrão será qual? Para nomes de classes siga esse link: https://github.com/michail-nikolaev/task-force-arma-3-radio/wiki/API:-Classes
@@ -49,8 +49,12 @@ krose_startWithNoWeapon			= false;
 krose_startWithNoGear			= false;
 //Informa o tempo em que a missão irá demorar para começar
 krose_startMissionAfter			= 30;
-//Habilita o modo Spectator
+
+//-------------------------------------------------------------
+//Permite ou não o modo espectador no jogo
 krose_spectatorMode				= true;
+//Apenas permite que seja espectador de outros jogadores (não NPCs) caso setado false, ele irá mostrar a posição de todos
+krose_onlyplayers				= false;
 
 //-------------------------------------------------------------
 //Mostra os créditos da missão

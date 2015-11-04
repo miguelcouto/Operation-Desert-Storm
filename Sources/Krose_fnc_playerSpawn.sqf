@@ -9,10 +9,42 @@
  * Arma 3 Mission Framework
  * Created by: Krose
  *
- * Controla todas as unidades que estão jogando removendo ou atribuindo coisas no spawn de cada uma delas.
- * Esta opção apenas funcionará no multiplayer
+ * Cria uma instância para TODOS os jogadores assim que eles spanwam na missão
 */
 
+_thisUnity = player;
+
+_thisUnity spawn 
+{
+	//Atribui insignias para a unidade assim que ela aparecer no mapa, caso tenha
+	if (krose_clanName != "") then 
+	{
+		[_this, krose_clanName] call BIS_fnc_setUnitInsignia;
+	};
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 Krose_fnc_Soldier = 
 {
 	_thisUnit = (_this select 0);
@@ -56,7 +88,7 @@ Krose_fnc_Soldier =
 if ((count playableUnits) != 0) then 
 {
 	//Será rodado diretamente no multiplayer
-	{ 
+	{ 	
 		[_x] call Krose_fnc_Soldier;
 	} forEach playableUnits;
 }
@@ -68,5 +100,6 @@ else
 	} forEach switchableUnits;
 };
 
-//Força a aplicação no player do servidor
+//Inclui apenas no jogador designado pelo host, já que esta instrução é rodada diretamente no server
 [player] call Krose_fnc_Soldier;
+*/
